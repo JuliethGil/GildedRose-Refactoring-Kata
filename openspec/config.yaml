@@ -1,0 +1,21 @@
+﻿
+schema: spec-driven
+
+context: |
+  Project: Gilded Rose Refactoring Kata.
+
+  Technology stack:
+  - Language: C#
+  - Testing framework: xUnit
+  - Platform: .NET
+
+  Scope:
+  - Work exclusively within csharp.xUnit.
+  - Production code: csharp.xUnit/GildedRose.
+  - Tests: csharp.xUnit/GildedRoseTests.
+
+  Project conventions:
+  - Follow existing C# conventions.
+  - Use xUnit for unit tests.
+  - Do not modify implementations for other programming languages or testing frameworks.
+  - Keep production code and tests separated.

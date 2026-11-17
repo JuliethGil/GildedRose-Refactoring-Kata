@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace GildedRoseKata;
 
@@ -15,13 +16,15 @@ public class GildedRose
     {
         for (var i = 0; i < Items.Count; i++)
         {
+            var qualityLoss = Items[i].Name != null && Items[i].Name.StartsWith("Conjured ", StringComparison.Ordinal) ? 2 : 1;
+
             if (Items[i].Name != "Aged Brie" && Items[i].Name != "Backstage passes to a TAFKAL80ETC concert")
             {
                 if (Items[i].Quality > 0)
                 {
                     if (Items[i].Name != "Sulfuras, Hand of Ragnaros")
                     {
-                        Items[i].Quality = Items[i].Quality - 1;
+                        Items[i].Quality = Math.Max(0, Items[i].Quality - qualityLoss);
                     }
                 }
             }
@@ -67,7 +70,7 @@ public class GildedRose
                         {
                             if (Items[i].Name != "Sulfuras, Hand of Ragnaros")
                             {
-                                Items[i].Quality = Items[i].Quality - 1;
+                                Items[i].Quality = Math.Max(0, Items[i].Quality - qualityLoss);
                             }
                         }
                     }
